@@ -20,7 +20,7 @@ jobs:
            image-ref: 'nethsix/trivy-test:${{ github.sha }}'
            format: 'table'
            exit-code: '1'
-           scanners: vuln
+           scanners: 'vuln'
       - name: Run Trivy vulnerability scanner in fs mode
         uses: aquasecurity/trivy-action@master
         with:
