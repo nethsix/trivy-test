@@ -20,3 +20,4 @@ jobs:
           image-ref: 'nethsix/trivy-test:${{ github.sha }}'
           format: 'table'
           exit-code: '1'
+          offline-scan: true
