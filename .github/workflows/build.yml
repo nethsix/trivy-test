@@ -14,13 +14,13 @@ jobs:
       - name: Build an image from Dockerfile
         run: |
           docker build -t nethsix/trivy-test:${{ github.sha }} .
-      # - name: Run Trivy vulnerability scanner
-      #   uses: aquasecurity/trivy-action@master
-      #   with:
-      #     image-ref: 'nethsix/trivy-test:${{ github.sha }}'
-      #     format: 'table'
-      #     exit-code: '1'
-      #     offline-scan: true
+       - name: Run Trivy vulnerability scanner
+         uses: aquasecurity/trivy-action@master
+         with:
+           image-ref: 'nethsix/trivy-test:${{ github.sha }}'
+           format: 'table'
+           exit-code: '1'
+           scanners: vuln
       - name: Run Trivy vulnerability scanner in fs mode
         uses: aquasecurity/trivy-action@master
         with:
